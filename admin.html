@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style/styleadmin.css">
+    <link rel="stylesheet" href="./style/styleIndex.css">
+    <link rel="stylesheet" href="./style/fontello.css">
+    <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
+    <link href="index.html">
+</head>
+
+<body>
+    <header class="container-fluid p-0 ">
+        <nav id="navFix" onscroll="cambioNav()"
+            class="navbar navbar-expand-lg navbar-light d-flex justify-content-between p-0 fixed-top ">
+            <a class="navbar-brand" href="#"><img src="images/logoblanco.png" alt="" class="logo-header pl-1"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center p-3 " id="navbarNav">
+                <ul class="navbar-nav justify-content-center w-75 ">
+                    <li class="nav-item active">
+                        <a class="nav-link p-0 " href="#">Contacto<span class="sr-only"></span></a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link p-0 " href="#">Sucursales y Cajeros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link p-0" href="#">Beneficios</a>
+                    </li>
+                </ul>
+                <button class="btn btn-danger mr-md-4 eliminar-boton">Banca Online</button>
+            </div>
+            <button class="btn btn-danger mr-md-4 agregar-boton">Banca Online</button>
+        </nav>
+    </header>
+
+    <div class="container-fluid">
+        <div class="up ">
+            <div class="icon icon-up-open "></div>
+        </div>
+        <div class="row d-flex justify-content-center mb-3 formularioReg">
+
+            <!-- Tabla Usuarios -->
+
+            <h2 class="card-title text-center titulosh2">Lista de Clientes Pendientes</h2>
+            <section class="container  justify-content-center ">
+                <!-- Tabla -->
+                <div class="table-responsive">
+                    <table class="table table-striped table-sm mb-lg-4  table-dark" id="">
+                        <br>
+                        <thead class="">
+                            <tr>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Apellido</th>
+                                <th scope="col">DNI</th>
+                                <th scope="col">Edad</th>
+                                <th scope="col">Domicilio</th>
+                                <th scope="col">Telefono</th>
+                                <th scope="col">Estado</th>
+                                <th scope="col">Contraseña</th>
+                                <th scope="col">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody">
+
+                        </tbody>
+                    </table>
+                </div>
+                <h2 class="card-title text-center">Lista de Clientes Aprobados</h2>
+                <div class="table-responsive">
+                    <table class="table table-striped table-sm mb-lg-4  table-dark" id="tabla">
+                        <br>
+                        <thead class="">
+                            <tr>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Apellido</th>
+                                <th scope="col">DNI</th>
+                                <th scope="col">Edad</th>
+                                <th scope="col">Domicilio</th>
+                                <th scope="col">Telefono</th>
+                                <th scope="col">Estado</th>
+                                <th scope="col">Contraseña</th>
+                                <th scope="col">Usuario</th>
+                                <th scope="col">Cbu</th>
+                                <th scope="col">Cuenta</th>
+                                <th scope="col">Monto</th>
+                                <th scope="col">Prestamos</th>
+                                <th scope="col">Observaciones</th>
+                                <th scope="col">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbodyCli">
+
+                        </tbody>
+                    </table>
+                </div>
+                <h2 class="card-title text-center">Lista de Clientes Rechazados</h2>
+                <div class="table-responsive">
+                    <table class="table table-striped table-sm mb-lg-4  table-dark" id="table-movie">
+                        <br>
+                        <thead class="">
+                            <tr>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Apellido</th>
+                                <th scope="col">DNI</th>
+                                <th scope="col">Edad</th>
+                                <th scope="col">Domicilio</th>
+                                <th scope="col">Telefono</th>
+                                <th scope="col">Estado</th>
+                                <th scope="col">Contraseña</th>
+                                <th scope="col">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbodyRech">
+
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-center bg-dark text-white">
+                    <h5 class="modal-title " id="exampleModalLabel">Modificar Datos de Cliente</h5>
+                    <button type="button" class="close " data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+
+                        <div class="form-group ">
+                            <label for="exampleInputEmail1">Nombre</label>
+                            <input type="text" class="form-control" id="nombre" placeholder="Nombres">
+
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Apellido</label>
+                            <input type="text" class="form-control" id="apellido" placeholder="Apellido">
+
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">DNI</label>
+                            <input type="text" class="form-control" id="dni" placeholder="DNI">
+                            
+                        </div>
+                        <div class="form-group ">
+                            <label for="exampleInputPassword1">Edad</label>
+                            <input type="text" class="form-control" id="edad" placeholder="Edad">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Domicilio</label>
+                            <input type="text" class="form-control" id="domicilio" placeholder="Domicilio">
+                        </div>
+                        <div class="form-group ">
+                            <label for="exampleInputPassword1">Telefono</label>
+                            <input type="text" class="form-control" id="telefono" placeholder="Telefono de contacto">
+                        </div>
+                        <div class="form-group text-center">
+                            
+                            <label for="exampleInputPassword1">Estado de la solicitud</label>
+                            <form class="" action="">
+                                    <select name="" id="estado">
+                                            <option value="pendiente">pendiente</option>
+                                            <option value="aprobado">aprobado</option>
+                                            <option value="rechazado">rechazado</option>
+                                    </select>
+                            </form>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Contraseña</label>
+                            <input type="text" class="form-control" id="password" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Nombre de Usuario</label>
+                            <input type="text" class="form-control" id="usuario" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">CBU</label>
+                            <input type="text" class="form-control" id="cbu" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Cuenta</label>
+                            <input type="text" class="form-control" id="cuenta" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Monto</label>
+                            <input type="text" class="form-control" id="monto" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Prestamos</label>
+                            <input type="text" class="form-control" id="prestamos" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Observacion</label>
+                            <input type="text" class="form-control" id="observacion" placeholder="">
+                        </div>
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary" onclick="guardarPersonaModificado()">Guardar
+                        cambios</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="w-100 py-3">
+        <div class="container d-flex justify-content-center justify-content-lg-between flex-wrap">
+
+            <div class="pt-3">
+                <img src="images/logoblanco.png" alt="" class="logo-pie">
+            </div>
+            <div class="mt-4 mr-4">
+                <ul class="">
+                    <li><a href="">Aviso legal</a></li>
+                    <li><a href="">Mapa</a></li>
+                    <li><a href="">Web Corporativa</a></li>
+                    <li><a href="">Aviso Navegadores</a> </li>
+                </ul>
+            </div>
+            <div class="redes d-flex justify-content-center mt-md-4 mt-lg-5">
+                <div class="boxRedes">
+                    <a href="">
+                        <img src="./images/svg/facebookTransparente2.png" alt="">
+                    </a>
+                </div>
+                <div class="boxRedes">
+                    <a href="">
+                        <img src="./images/svg/instagram.svg" alt="">
+                    </a>
+                </div>
+                <div class="boxRedes">
+                    <a href="">
+                        <img src="./images/svg/gorjeo.svg" alt="">
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="./src/admin.js"></script>
+    <script src="./src/efectosIndex.js"></script>
+</body>
+
+</html>

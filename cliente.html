@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style/style2.css">
+    <link rel="stylesheet" href="./style/styleIndex.css">
+    <link rel="stylesheet" href="./style/fontello.css">
+    <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
+    <title>Cliente</title>
+</head>
+
+<body class="" id="particles-js">
+    <header class="container-fluid p-0 ">
+        <nav id="navFix" onscroll="cambioNav()"
+            class="navbar navbar-expand-lg navbar-light d-flex justify-content-between p-0 fixed-top ">
+            <a class="navbar-brand" href="./index.html"><img src="images/logoblanco.png" alt=""
+                    class="logo-header pl-1"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center p-3 " id="navbarNav">
+                <ul class="navbar-nav justify-content-center w-75 ">
+                    <li class="nav-item active">
+                        <a class="nav-link p-0 " target="_blank" href="./registrar.html">Contacto<span
+                                class="sr-only"></span></a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link p-0 " href="./404.html">Sucursales y Cajeros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link p-0" href="./404.html">Beneficios</a>
+                    </li>
+                </ul>
+                <button class="btn btn-danger mr-md-4 eliminar-boton" onclick="logoOut()">Salir
+                </button>
+            </div>
+            <button class="btn btn-danger mr-md-4 agregar-boton" onclick="logoOut()">Salir
+            </button>
+        </nav>
+    </header>
+
+    <div>
+        <div class="Miscuentas">
+            <div class="card col-lg-4">
+                <div class="card-body">
+                    <h5 class="card-title">Cuenta: <div id=""></div> </h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                    <a href="#" class="card-link">Card link</a>
+                    <a href="#" class="card-link">Another link</a>
+                </div>
+            </div>
+        </div>
+        <div class="Tarjeta de credito">
+
+        </div>
+        <div class="Prestamos">
+
+        </div>
+    </div>
+
+    <div class="up ">
+        <div class="icon icon-up-open "></div>
+    </div>
+    <div class="container grafica-tarjeta justify-content-center">
+
+        <div class="card w-100 mb-4" style="width: 18rem;">
+            <div id="cardbody" class="card-body">
+
+            </div>
+        </div>
+    </div>
+    <div class=" container justify-content-center ">
+        <div class=" d-lg-flex justify-content-center">
+
+            <div class="card mb-3 mb-lg-0 col-lg-7 m-lg-3 px-0">
+                <div class="card-header">
+                    Balance
+                </div>
+                <div class="chart__container col pb-0">
+                    <canvas id="chart" width="400" height="200"></canvas>
+                    <div class="mt-5 ml-3">
+                        <p class="font-italic text-muted">
+                            *Datos actualizados cada 24hs habiles.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mb-2 mb-lg-0 col-lg-4 m-lg-3 px-0">
+
+                <div class="card-body pt-0">
+                    <div class="d-flex justify-content-center m-2 mt-5">
+                        <img src="./img/tarjetatransparente.png" alt="" class="tamaño-tarjeta-credito rounded">
+                    </div>
+                    <div class="d-flex mt-5">
+                        <p class="card-text col-6 font-weight-light text-dark-50">Margenes hasta</p>
+                        <p class="card-text col-6 text-right font-italic font-weight-bolder text-dark">$200.000,00</p>
+                    </div>
+                    <div class="d-flex mt-1">
+                        <p class="card-text col-12 font-weight-light text-dark-50 mt-1">Visa Travel Assistance</p>
+                    </div>
+                    <div class="d-flex mt-1">
+                        <p class="card-text col-12 font-weight-light text-dark-50 mt-1">Centro de Servicios Visa</p>
+                    </div>
+                    <div class="d-flex mt-1">
+                        <p class="card-text col-12 font-weight-light text-dark-50 mt-1">Límite de Compra a tu medida</p>
+                    </div>
+
+                    <div class="d-flex d-flex justify-content-center mt-3">
+                        <a href="./404.html" target="_blank">
+                            <button type="button" class="btn btn-outline-info ml-3 px-4 mt-2">Solicita tu tarjeta
+                                aqui</button>
+
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container  justify-content-center">
+        <div class="d-lg-flex justify-content-center w-100">
+
+            <div class="card mb-3 mb-lg-0 col-lg-4 m-lg-3">
+                <div class="card-body">
+                    <h3 class="text-center ">Dolar</h3>
+                    <hr class="m-0">
+
+                    <div class="d-flex justify-content-around mt-4">
+                        <div>
+                            <h4 class="text-success">$59,89</h4>
+                        </div>
+                        <div>
+                            <h4 class="text-success">$65,44</h4>
+                        </div>
+                    </div>
+
+                    <div class="d-flex justify-content-around">
+                        <div>
+                            <h6 class="text-muted">Compra</h6>
+                        </div>
+                        <div>
+                            <h6 class="text-muted">Venta</h6>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class="font-italic text-muted text-dark-50 pt-4 m-0 text-center">
+                            *Ultima actualizacion: 05/11/19 10:03.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mb-3 mb-lg-0 col-lg-7 m-lg-3 p-1">
+                <div class="card-body d-flex justify-content-between p-1">
+                    <img src="./img/image.png" class="perfil rounded-circle mt-1" alt="">
+                    <p class="mt-3">Alejo Lazarte</p>
+                    <div class="input-group mt-2 w-50">
+                        <input type="text" class="form-control" placeholder="$10.000,00"
+                            aria-label="Recipient's username" aria-describedby="button-addon2">
+                        <div class="input-group-append mb-3">
+                            <button class="btn btn-outline-secondary" type="button"
+                                id="button-addon2">Transferir</button>
+                        </div>
+                    </div>
+                </div>
+                <hr class="m-0">
+                <div class="card-body d-flex justify-content-between p-lg-1 px-3">
+                    <img src="./img/Perfil-capuchas-x1000-300x300.png" class="perfil rounded-circle mt-1" alt="">
+                    <p class="mt-3">Marianella Rivas</p>
+                    <div class="input-group mt-2 w-50">
+                        <input type="text" class="form-control" placeholder="$10.000,00"
+                            aria-label="Recipient's username" aria-describedby="button-addon2">
+                        <div class="input-group-append mb-3">
+                            <button class="btn btn-outline-secondary" type="button"
+                                id="button-addon2">Transferir</button>
+                        </div>
+                    </div>
+                </div>
+                <hr class="m-0">
+                <div class="card-body d-flex justify-content-between p-lg-1 px-3">
+                    <img src="./img/foto-perfil-2.png" class="perfil rounded-circle mt-1" alt="">
+                    <p class="mt-3">Sebastian Valdez</p>
+                    <div class="input-group mt-2 w-50">
+                        <input type="text" class="form-control" placeholder="$10.000,00"
+                            aria-label="Recipient's username" aria-describedby="button-addon2">
+                        <div class="input-group-append mb-3">
+                            <button class="btn btn-outline-secondary" type="button"
+                                id="button-addon2">Transferir</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <footer class="w-100 py-3">
+        <div class="container d-flex justify-content-center justify-content-lg-between flex-wrap">
+
+            <div class="pt-3">
+                <img src="img/logoblanco.png" alt="" class="logo-pie">
+            </div>
+            <div class="mt-4 mr-4">
+                <ul class="">
+                    <li><a href="">Aviso legal</a></li>
+                    <li><a href="">Mapa</a></li>
+                    <li><a href="">Web Corporativa</a></li>
+                    <li><a href="">Aviso Navegadores</a> </li>
+                </ul>
+            </div>
+            <div class="redes d-flex justify-content-center mt-md-4 mt-lg-5">
+                <div class="boxRedes">
+                    <a href="">
+                        <img src="./images/svg/facebookTransparente2.png" alt="">
+                    </a>
+                </div>
+                <div class="boxRedes">
+                    <a href="">
+                        <img src="./images/svg/instagram.svg" alt="">
+                    </a>
+                </div>
+                <div class="boxRedes">
+                    <a href="">
+                        <img src="./images/svg/gorjeo.svg" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+<script src="./src/Chart.js"></script>
+<script src="./src/cliente.js"></script>
+<script src="./src/particles.js"></script>
+<script src="./src/efectosIndex.js"></script>
+<script src="./src/logeo.js"></script>
+
+</html>

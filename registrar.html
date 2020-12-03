@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html class="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style/styleIndex.css">
+    <link rel="stylesheet" href="./style/fontello.css">
+    <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
+    <title>Registrar Usuario</title>
+</head>
+
+<body>
+    <header class="container-fluid p-0 ">
+        <nav id="navFix" onscroll="cambioNav()"
+            class="navbar navbar-expand-lg navbar-light d-flex justify-content-between p-0 fixed-top ">
+            <a class="navbar-brand" href="#"><img src="images/logoblanco.png" alt="" class="logo-header pl-1"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center p-3 " id="navbarNav">
+                <ul class="navbar-nav justify-content-center w-75 ">
+                    <li class="nav-item active">
+                        <a class="nav-link p-0 " href="#">Contacto<span class="sr-only"></span></a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link p-0 " href="#">Sucursales y Cajeros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link p-0" href="#">Beneficios</a>
+                    </li>
+                </ul>
+                <button class="btn btn-danger mr-md-4 agregar-boton">Banca Online</button>
+            </div>
+            <button class="btn btn-danger mr-md-4 eliminar-boton">Banca Online</button>
+        </nav>
+    </header>
+    <div class="up ">
+        <div class="icon icon-up-open "></div>
+    </div>
+
+    <!-- Formulario -->
+    <section class="container mt-5 formularioReg col-lg-6" id="formRegistrar">
+        <div class="bg-dark shadow-lg rounded ">
+            <h1 class="display-4 text-light text-center ">Registrarse</h1>
+            <form class="bg-light shadow-lg rounded mb-5" onsubmit="return validar()">
+
+                <div class="form-group">
+                    <div class="col-md-12 mb-">
+                        <label for="validationDefault04">Nombre</label>
+                        <input type="text" class="form-control" id="nombre" placeholder="Nombre" required=""
+                            onblur="revisar(this)" onkeyup="revisar(this)">
+                        <div id="feedbackNombre" class="invalid-feedback">
+                            Ingrese un nombre
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <label for="validationDefault05">Apellido</label>
+                        <input id="apellido" type="text" class="form-control" placeholder="Apellido"
+                            onblur="revisar(this)" onkeyup="revisar(this)">
+                        <div id="feedbackNombre" class="invalid-feedback">
+                            Ingrese un Apellido
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-12 mb-">
+                        <label for="validationDefault03">DNI</label>
+                        <input type="" maxlength="8" class="form-control" id="dni"
+                            placeholder="Ingresar DNI sin puntos ni comas" required=""
+                            onblur="revisar(this); revisarNumero(this)" onkeyup="revisar(this); revisarNumero(this)">
+                        <div id="feedbackNombre" class="invalid-feedback">
+                            Solo debe ingresar Numeros
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-12 mb-">
+                        <label for="validationDefault03">Edad</label>
+                        <input type="" maxlength="8" class="form-control" id="edad" placeholder="Ingresar Edad"
+                            required="" onblur="revisar(this); revisarNumero(this)"
+                            onkeyup="revisar(this); revisarNumero(this)">
+                        <div id="feedbackNombre" class="invalid-feedback">
+                            Solo debe ingresar Numeros
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <label for="validationDefault05">Domicilio</label>
+                        <input id="domicilio" type="text" class="form-control" placeholder="Ingresar Domicilio"
+                            onblur="revisar(this)" onkeyup="revisar(this)">
+                        <div id="observacion" class="invalid-feedback">
+                            Debe ingresar una Observacion
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-12 mb-">
+                        <label for="validationDefault03">Telefono</label>
+                        <input type="" maxlength="10" class="form-control" id="telefono" placeholder="Ingresar Telefono"
+                            required="" onblur="revisar(this); revisarNumero(this)"
+                            onkeyup="revisar(this); revisarNumero(this)">
+                        <div id="feedbackNombre" class="invalid-feedback">
+                            Solo debe ingresar Numeros
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-12 mb-">
+                        <label for="validationDefault04">Contraseña</label>
+                        <input type="password" class="form-control" id="password" placeholder="Ingrese una contraseña"
+                            required="" onblur="revisar(this)" onkeyup="revisar(this)">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="text-center p-2">
+                        <!-- <button type="button" class="btn btn-secondary w-30 mr-auto"
+                                    data-dismiss="modal">Cerrar</button> -->
+                        <button type="button" class="btn btn-danger w-75 w-md-25 mb-4" data-toggle="modal"
+                            data-target="#exampleModal" onclick="agregarPersona()" onclick="validar()">Enviar
+                            Solicitud</button>
+                    </div>
+                </div>
+            </form>
+            <!-- Modal espera de aprobacion de cuenta -->
+
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Pendiente de aprobacion
+                            </h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            En breve responderemos tu solicitud.
+                        </div>
+                        <div class="modal-footer">
+                            <a href="index.html"><button type="button" class="btn btn-primary">Volver</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+    <footer class="w-100 py-3">
+        <div class="container d-flex justify-content-center justify-content-lg-between flex-wrap">
+
+            <div class="pt-3">
+                <img src="images/logoblanco.png" alt="" class="logo-pie">
+            </div>
+            <div class="mt-4 mr-4">
+                <ul class="">
+                    <li><a href="">Aviso legal</a></li>
+                    <li><a href="">Mapa</a></li>
+                    <li><a href="">Web Corporativa</a></li>
+                    <li><a href="">Aviso Navegadores</a> </li>
+                </ul>
+            </div>
+            <div class="redes d-flex justify-content-center mt-md-4 mt-lg-5">
+                <div class="boxRedes">
+                    <a href="">
+                        <img src="./images/svg/facebookTransparente2.png" alt="">
+                    </a>
+                </div>
+                <div class="boxRedes">
+                    <a href="">
+                        <img src="./images/svg/instagram.svg" alt="">
+                    </a>
+                </div>
+                <div class="boxRedes">
+                    <a href="">
+                        <img src="./images/svg/gorjeo.svg" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+    <script src="./lib/bundle.js"></script>
+    <script src="./src/efectosIndex.js"></script>
+    <script src="./src/admin.js"></script>
+    <script src="./src/validation.js"></script>
+</body>
+
+</html>

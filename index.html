@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style/styleIndex.css">
+    <link rel="stylesheet" href="./style/fontello.css">
+    <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
+
+    <title>Rolling-Bank</title>
+</head>
+
+<body>
+    <header class="container-fluid p-0 ">
+        <nav id="navFix" onscroll="cambioNav()"
+            class="navbar navbar-expand-lg navbar-light d-flex justify-content-between p-0 fixed-top ">
+            <a class="navbar-brand" href="./index.html"><img src="images/logoblanco.png" alt=""
+                    class="logo-header pl-1"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center p-3 " id="navbarNav">
+                <ul class="navbar-nav justify-content-center w-75 ">
+                    <li class="nav-item active">
+                        <a class="nav-link p-0 " target="_blank" href="./registrar.html">Contacto<span
+                                class="sr-only"></span></a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link p-0 " href="./404.html">Sucursales y Cajeros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link p-0" href="./404.html">Beneficios</a>
+                    </li>
+                </ul>
+                <button class="btn btn-danger mr-md-4 eliminar-boton" data-toggle="modal"
+                    data-target="#modalLogin">Banca
+                    Online</button>
+            </div>
+            <button class="btn btn-danger mr-md-4 agregar-boton" data-toggle="modal" data-target="#modalLogin">Banca
+                Online</button>
+        </nav>
+    </header>
+    <!-- Modal Usuario Login-->
+    <div class="modal fade Responsive" id="modalLogin" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true" onsubmit="return validar()">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content w-75">
+                <!-- <div class="modal-header text-center">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div> -->
+                <div class="d-flex justify-content-center mt-4">
+                    <img src="images/favicon.png" class="text-center" alt="">
+                </div>
+                <div class="">
+                    <h4 class="font-weight-bolder text-center my-3">Te damos la bienvenida a RollingBank</h4>
+                </div>
+                <!-- Modal Agregar Usuario -->
+                <div class="d-flex justify-content-center row">
+                    <div class="modal-body d-flex justify-content-center pb-0">
+
+                        <div class="form-row w-75">
+                            <div class="col-md-12 col-7">
+                                <input type="text" class="form-control mb-2" id="nombreUs"
+                                    placeholder="Nombre de Usuario" required="" onblur="revisar(this)"
+                                    onkeyup="revisar(this)">
+                                <div id="feedbackNombre" class="invalid-feedback">
+                                    Ingrese un Usuario
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <input type="password" maxlength="8" class="form-control" id="passwordUs"
+                                    placeholder="Contraseña" required="" onblur="revisar(this); revisarNumero(this)"
+                                    onkeyup="revisar(this); revisarNumero(this)">
+                                <div id="feedbackNombre" class="invalid-feedback">
+                                    Solo debe ingresar 8 digitos
+                                </div>
+                            </div>
+                            <a href="" class="text-decoration-none ml-1 text-muted mt-1">
+                                <p>¿Olvidaste tu contraseña?</p>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Botones Cerrar y Guardar -->
+                    <div class="d-flex row justify-content-center">
+                        <div class="col-11 d-flex justify-content-center">
+                            <button type="button" id="" class="btn btn-danger w-75 my-3" onclick="loguear()">Iniciar
+                                sesion</button>
+                        </div>
+                        <div class="text-center col-12 mb-4">
+                            <p class="text-decoration-none ml-1 text-muted mt-1 mt-4">Al continuar, aceptas las
+                                Condiciones del servicio y la<br>Política de privacidad de RollingBank.
+                            </p>
+                            <a target="_blank" class="text-decoration-none ml-1 text-muted mt-1 mb-4 font-weight-bold"
+                                href="registrar.html">¿Aun no tenes una cuenta? Registrate</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="up ">
+        <div class="icon icon-up-open "></div>
+    </div>
+    <div id="carouselExampleControls" class="carousel slide " data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active h-50 ">
+                <a href="./registrar.html" target="_blank">
+                    <img src="./images/1.jpg" class="d-block w-100" alt="...">
+                </a>
+            </div>
+            <div class="carousel-item h-25">
+                <a href="./registrar.html" target="_blank">
+                    <img src="./images/2.jpg" class="d-block w-100" alt="...">
+                </a>
+            </div>
+            <div class="carousel-item h-50">
+                <a href="./registrar.html" target="_blank">
+
+                    <img src="./images/3.jpg" class="d-block w-100" alt="...">
+                </a>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    <section class=" mt-5 mb-3 justify-content-center">
+        <div
+            class="container d-flex justify-content-center justify-content-md-around justify-content-lg-around flex-wrap  ">
+            <a href="./registrar.html">
+                <div class="card border-0 p-0 mb-4 mb-lg-0" style="width: 19rem;">
+                    <img src="./images/card-tarjeta-credito.jpg" class="card-img-top " alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Solicita online tu Tarjeta</h5>
+                        <p class="card-text mt-3">Disfruta de una bonificaion de un año en el mantenimiento.</p>
+                        <a href="#" class="btn pl-0 mt-2">Solicitala ahora</a>
+                    </div>
+                </div>
+            </a>
+            <a href="./registrar.html">
+                <div class="card border-0 p-0 mb-4 mb-lg-0" style="width: 19rem;">
+                    <img src="./images/card-prestamo-personal.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Prestamos Personales</h5>
+                        <p class="card-text mt-3">Ahora solicitar tu prestamo enline es mas facil y rápido.</p>
+                        <a href="#" class="btn pl-0 mt-2">Enterate como ahora</a>
+                    </div>
+                </div>
+            </a>
+            <a href="./registrar.html">
+                <div class="card border-0 p-0 mb-4 mb-lg-0" style="width: 19rem;">
+                    <img src="./images/card-beneficio-cliente.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Se nuestro cliente</h5>
+                        <p class="card-text mt-3">Tenemos beneficios exclusivos para que disfrutes.</p>
+                        <a href="#" class="btn pl-0 mt-2">Enterate como ahora</a>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="w-100 py-3">
+        <div class="container d-flex justify-content-center justify-content-lg-between flex-wrap">
+
+            <div class="pt-3">
+                <a href="./index.html" target="_blank">
+                    <img src="img/logoblanco.png" alt="" class="logo-pie">
+                </a>
+            </div>
+            <div class="mt-4 mr-4">
+                <ul class="">
+                    <li><a href="./404.html" target="_blank">Aviso legal</a></li>
+                    <li><a href="./404.html" target="_blank">Mapa</a></li>
+                    <li><a href="./404.html" target="_blank">Web Corporativa</a></li>
+                    <li><a href="./404.html" target="_blank">Aviso Navegadores</a> </li>
+                </ul>
+            </div>
+            <div class="redes d-flex justify-content-center mt-md-4 mt-lg-5">
+                <div class="boxRedes">
+                    <a href="./404.html" target="_blank">
+                        <img src="./images/svg/facebookTransparente2.png" alt="">
+                    </a>
+                </div>
+                <div class="boxRedes">
+                    <a href="./404.html" target="_blank">
+                        <img src="./images/svg/instagram.svg" alt="">
+                    </a>
+                </div>
+                <div class="boxRedes">
+                    <a href="./404.html" target="_blank">
+                        <img src="./images/svg/gorjeo.svg" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+    <script src="./lib/bundle.js"></script>
+    <script src="./src/app.js"></script>
+    <script src="./src/efectosIndex.js"></script>
+    <script src="./src/logeo.js"></script>
+    <script src="./src/validation.js"></script>
+</body>
+
+</html>

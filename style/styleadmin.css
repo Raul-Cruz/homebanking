@@ -1,0 +1,38 @@
+body{
+    background-color: 	#1564A6;
+}
+
+footer{
+    background-color: #1A2340;
+}
+
+.color-row{
+    background-color: white;
+}
+
+.col{
+    padding: 5px;
+}
+
+.margen-cards{
+    margin-bottom: 5px;
+}
+
+.color-footer{
+    background-color: #1A2340;
+}
+
+.logo-pie{
+    width: 236px;
+    height: 60px;
+}
+
+.logo-header{
+    width: 96px;
+    height: 30px;
+}
+
+.text-decoration-none{
+    color: black;
+    font-size: 13px;
+}

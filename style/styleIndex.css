@@ -1,0 +1,187 @@
+body{
+    margin: 0;
+    padding: 0;
+    background:rgb(250, 246, 246)!important;
+}
+header{
+    background: rgb(20, 20, 85);
+}
+header .navbar{
+    background:  rgb(20, 20, 85);
+}
+
+.headernav2{
+    position: fixed;
+    z-index:500;
+    top:0;
+    width: 100%;
+    transition:all 700ms ease;
+    align-items: center;
+    opacity: 0.9;
+    background: rgba(20, 20, 85,.8);
+}
+.carousel{
+    margin-top: 80px;
+}
+.nav-link {
+    color: #9ba6b5!important;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-right: 40px;
+}
+.nav-item a:hover{
+    color:white!important;
+}
+.navText ul li{
+list-style: none;
+text-decoration: none;
+}
+.navText ul li a{
+    color: #9ba6b5;
+}
+.navText ul li a:hover{
+    text-decoration: none;
+    color: white;
+}
+.carousel-item{
+    height: 650px;
+}
+.carousel-item img{
+    height:100%!important;
+}
+
+
+/*cards que se encuentran dentro del slider */
+.card-slider{
+    left: 800px;
+}
+/*fin de las card dentro del slider*/
+section .card {
+    border-radius: 7px;
+    transition: all 0.25s!important;
+}
+section .card a{
+    color: teal;
+    text-decoration: none;
+}
+section .card img{
+    width: 100%;
+}
+section .card .btn{
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #008080;
+}
+
+@media only screen and (min-width:992px){
+    section .card:hover{
+        transform: translateY(-5px)!important;
+        box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2)!important;
+    }
+}
+
+footer{
+    background-color: rgb(20, 20, 85);
+}
+.boxRedes{
+    width: 40px;
+    height: 40px;
+    margin-right: 20px;
+}
+.boxRedes img{
+    width: 100%;
+    height: 100%;
+}
+footer ul li{
+    list-style: none;
+}
+footer ul li a{
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #008080;   
+    
+}
+footer ul li a:hover{
+    text-decoration: none;
+    color: #67a5a5;
+}
+.logo-pie{
+    width: 180px;
+    height: 120px;
+}
+
+.logo-header{
+    margin: 15px;
+    width: 110px;
+    height: 70px;
+}
+.logo-header img{
+    width: 100%;
+    height: 100%;
+}
+
+
+/* Extra small devices (portrait phones, less than 576px)
+ No media query for `xs` since this is the default in Bootstrap*/
+
+/*Small devices (landscape phones, 576px and up)*/
+@media screen and  (min-width: 360px) {
+    .card-slider{        
+        background-color: red;
+    }
+}
+
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+    .card-slider{
+        left: 10px;
+    }
+}
+
+/*Large devices (desktops, 992px and up)/*/
+@media (min-width: 992px) {
+    .card-slider{
+        left: 10px;
+    }
+}
+
+/*Extra large devices (large desktops, 1200px and up)*/
+.formularioReg{
+    margin-top: 130px!important;
+}
+/* Estilos del boton IR ARRIBA */
+.up{
+    position: fixed!important;
+    bottom: 15px;
+    right: 15px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #db2424;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    color: white;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+@media (min-width: 768px){
+    .eliminar-boton{
+        display: none;
+    }
+}
+
+@media (max-width: 768px){
+    .agregar-boton{
+        display: none;
+    }
+}
+
+.text-decoration-none{
+    color: black;
+    font-size: 13px;
+}
